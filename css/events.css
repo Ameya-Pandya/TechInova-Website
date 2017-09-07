@@ -1,0 +1,47 @@
+.jarallax {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    z-index: 0;
+}
+.jarallax > .jarallax-img {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* demo styles */
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    margin: 0;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased !important;
+}
+.jarallax {
+    min-height: 650px;
+}
+
+/* hero block */
+.demo-table {
+    display: table;
+    width: 100%;
+    height: 650px;
+    background-color: rgba(86, 94, 99, 0.53);
+    color: #fff;
+}
+.demo-table-cell {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
