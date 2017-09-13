@@ -80,8 +80,8 @@
           <div class="modal-body">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <div class="embed-responsive embed-responsive-16by9">
-              <!-- <iframe class="embed-responsive-item" src="..."></iframe> -->
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vb3FOYRIPd8" frameborder="0" allowfullscreen></iframe>
+              <iframe id="myVideo" class="embed-responsive-item" src="https://www.youtube.com/embed/vb3FOYRIPd8?rel=0&showinfo=0&version=3&enablejsapi=1"
+                frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -106,17 +106,40 @@
 
   <!-- Custom JS -->
   <script>
-    $('.sound-mute').on('click', function () {
-      var icon = $('.sound-mute .fa');
-      if (icon.hasClass('fa-volume-up')) {
-        $('audio')[0].pause();
-        icon.removeClass('fa-volume-up');
-        icon.addClass('fa-volume-off');
-      } else {
-        $('audio')[0].play();
-        icon.removeClass('fa-volume-off');
-        icon.addClass('fa-volume-up');
-      }
+    var prevSoundState = true;
+    $(document).ready(function () {
+      $('.sound-mute').on('click', function () {
+        var icon = $('.sound-mute .fa');
+        if (icon.hasClass('fa-volume-up')) {
+          $('audio')[0].pause();
+          icon.removeClass('fa-volume-up');
+          icon.addClass('fa-volume-off');
+          prevSoundState = false;
+        } else {
+          $('audio')[0].play();
+          icon.removeClass('fa-volume-off');
+          icon.addClass('fa-volume-up');
+          prevSoundState = true;
+        }
+      });
+      $('#videoCTA').on('show.bs.modal', function () {
+        if (prevSoundState) {
+          $('audio')[0].pause();
+          var icon = $('.sound-mute .fa');
+          icon.removeClass('fa-volume-up');
+          icon.addClass('fa-volume-off');
+        }
+      });
+      $('#videoCTA').on('hide.bs.modal', function () {
+        document.getElementById('myVideo')
+                .contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        if (prevSoundState) {
+          $('audio')[0].play();
+          var icon = $('.sound-mute .fa');
+          icon.removeClass('fa-volume-off');
+          icon.addClass('fa-volume-up');
+        }
+      })
     });
   </script>
 </body>
