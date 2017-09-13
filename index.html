@@ -5,22 +5,13 @@
   <base href="/">
   <meta charset="utf-8">
   <link rel="icon" href="favicon.ico" type="image/ico">
-
-
-  <title>TechInnova</title>
+  <title>TechInnova 2017</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <!-- Jarallax -->
-  <script src="main/js/jarallax/jarallax.js"></script>
-  <!-- <script src="./main/js/jarallax/jarallax-video.js"></script> -->
   <!-- FontAwesome -->
   <link rel="stylesheet" href="main/css/font-awesome/css/font-awesome.min.css">
-  <!-- Jquery -->
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-  <!-- Jplayer -->
-  <script src="main/js/jplayer/jquery.jplayer.min.js"></script>
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
 
   <link rel="stylesheet" media="screen" href="main/css/style.css">
   <link rel="stylesheet" href="main/css/newStyles.css">
@@ -29,13 +20,13 @@
 <body>
   <div class="jarallax">
     <div class="logo-container">
+      <header>
+        <h1>
+          Deogiri Institute of Engineering and<br>Management Studies, Aurangabad
+        </h1>
+        <h3><i>presents</i></h3>
+      </header>
       <div class="logo-holder">
-        <header>
-          <h1>
-            Deogiri Institute of Engineering and<br>Management Studies, Aurangabad
-          </h1>
-          <h3><i>presents</i></h3>
-        </header>
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-sm-12 col-xs-12">
@@ -49,44 +40,85 @@
           </div>
         </div>
       </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <button id="cta" class="center-block btn btn-lg btn-default" data-toggle="modal" data-target="#videoCTA">Watch the promo</button>
+          </div>
+        </div>
+      </div>
       <div class="jarallax-img">
         <div id="particles-js">
         </div>
       </div>
     </div>
     <footer>
-      <a href="#" class="pull-left sound-mute">
+      <a href="#" class="pull-left sound-mute" title="Mute">
         <i class="fa fa-volume-up fa-2x color-white"></i>
         <i class="fa fa-volume-off fa-2x color-white" style="display: none;"></i>
       </a>
-      <script>
-        $('.sound-mute').on('click', function () {
-          var icon = $('.sound-mute .fa');
-          if (icon.hasClass('fa-volume-up')) {
-            $('audio')[0].pause();
-            icon.removeClass('fa-volume-up');
-            icon.addClass('fa-volume-off');
-          } else {
-            $('audio')[0].play();
-            icon.removeClass('fa-volume-off');
-            icon.addClass('fa-volume-up');
-          }
-        });
-      </script>
       <div class="pull-right">
-        <a href="http://facebook.com/TechInnova2k17" target="_blank" class="social-icons">
+        <a href="http://facebook.com/TechInnova2k17" target="_blank" class="social-icons" title="Like us on Facebook">
           <i class="fa fa-facebook-official fa-2x color-white"></i>
         </a>
-        <a href="http://instagram.com/Tech.innova" class="social-icons" target="_blank">
+        <a href="http://instagram.com/Tech.innova" class="social-icons" target="_blank" title="Follow us on Instagram">
           <i class="fa fa-instagram fa-2x color-white"></i>
+        </a>
+        <a href="http://dietms.org" target="_blank" class="social-icons" title="Visit DIEMS">
+          <i class="fa fa-external-link fa-2x color-white"></i>
         </a>
       </div>
     </footer>
     <div id="jquery_jplayer"></div>
   </div>
+
+  <!-- Modal for Video embed -->
+  <div class="modal fade" id="videoCTA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+    <div class="valign-wrapper">
+      <div class="modal-dialog" role="video">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="embed-responsive embed-responsive-16by9">
+              <!-- <iframe class="embed-responsive-item" src="..."></iframe> -->
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vb3FOYRIPd8" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <!-- Jplayer -->
+  <script src="main/js/jplayer/jquery.jplayer.min.js"></script>
+  <!-- Jarallax -->
+  <script src="main/js/jarallax/jarallax.js"></script>
+  <!-- <script src="./main/js/jarallax/jarallax-video.js"></script> -->
   <!-- Particles  -->
   <script src="main/js/particles/particles.min.js"></script>
   <script src="main/js/app.js"></script>
+
+  <!-- Custom JS -->
+  <script>
+    $('.sound-mute').on('click', function () {
+      var icon = $('.sound-mute .fa');
+      if (icon.hasClass('fa-volume-up')) {
+        $('audio')[0].pause();
+        icon.removeClass('fa-volume-up');
+        icon.addClass('fa-volume-off');
+      } else {
+        $('audio')[0].play();
+        icon.removeClass('fa-volume-off');
+        icon.addClass('fa-volume-up');
+      }
+    });
+  </script>
 </body>
 
 </html>
