@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <base href="/">
+  <!-- <base href="/"> -->
   <meta charset="utf-8">
   <link rel="icon" href="favicon.ico" type="image/ico">
   <title>TechInnova 2017</title>
@@ -132,7 +132,7 @@
       });
       $('#videoCTA').on('hide.bs.modal', function () {
         document.getElementById('myVideo')
-                .contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+          .contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
         if (prevSoundState) {
           $('audio')[0].play();
           var icon = $('.sound-mute .fa');
